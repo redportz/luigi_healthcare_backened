@@ -33,7 +33,7 @@ We've removed all personal data and cloud dependencies. You will now set up your
 1. Open **MySQL Workbench**.
 2. Connect to:
    - **Host:** `localhost`
-   - **Port:** `your port here`
+   - **Port:** `5114`(or your configured port)
    - **User:** `root` (or your configured user)
 3. Click `File > Open SQL Script…`
    - Select the file: `script.sql`
