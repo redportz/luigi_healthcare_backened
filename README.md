@@ -11,33 +11,40 @@
 
 ---
 
-## 🧠 Setup the Local Database (No Cloud Required)
+## 🧠 Setup the Local MySQL Database (No Cloud Required)
 
-We've removed all personal data and cloud dependencies. You will now **set up your own local SQL Server database** using the included script:
+We've removed all personal data and cloud dependencies. You will now set up your own **local MySQL database** using the included script.
 
-### ✅ Step 1: Install SQL Server & SSMS
+---
 
-- Download and install **SQL Server**:  
-  [https://www.microsoft.com/en-us/sql-server/sql-server-downloads](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+### ✅ Step 1: Install MySQL & MySQL Workbench
 
-- Download and install **SQL Server Management Studio (SSMS)**:  
-  [https://aka.ms/ssms](https://aka.ms/ssms)
+- **MySQL Community Server:**  
+  [https://dev.mysql.com/downloads/mysql/](https://dev.mysql.com/downloads/mysql/)  
+  ⚙️ During setup, change the **default port to `5114`**.
+
+- **MySQL Workbench:**  
+  [https://dev.mysql.com/downloads/workbench/](https://dev.mysql.com/downloads/workbench/)
 
 ---
 
 ### ✅ Step 2: Run the Included Database Script
 
-1. Open SSMS and connect to **your local SQL Server**.
-2. Right-click **Databases > New Database**  
-   - Name it something like `luigi_healthcare`
-3. Once created, click **File > Open > File...**
-   - Select the file: [`script.sql`](.script.sql)
-4. Make sure the new database is selected in the dropdown (top toolbar).
-5. Click **Execute** to run the script.
-
-✅ Your database is now fully set up with test accounts and sample data.
+1. Open **MySQL Workbench**.
+2. Connect to:
+   - **Host:** `localhost`
+   - **Port:** `5114`
+   - **User:** `root` (or your configured user)
+3. Click `File > Open SQL Script…`
+   - Select the file: `script.sql`
+4. Make sure the following lines are included at the top of the script (or run them manually first):
+   ```sql
+   CREATE DATABASE IF NOT EXISTS luigi_healthcare;
+   USE luigi_healthcare;
+5. Click the ⚡️ **Execute** button to run the script.
 
 ---
+
 
 ## 🧪 Running the Backend Locally
 
